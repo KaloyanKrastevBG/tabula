@@ -18,7 +18,7 @@ public class AnnouncementController {
     @GetMapping
     public String announcement(Model model){
 
-//        model.addAttribute("announcement", )
+        model.addAttribute("announcements", announcementService.findAll());
 
         return "announcement/announcements";
     }
