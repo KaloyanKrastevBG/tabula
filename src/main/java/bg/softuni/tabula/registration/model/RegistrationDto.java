@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
+//@FieldMatch(first = "password", second = "repeatPassword", message = "The passwords do not match!")
 public class RegistrationDto {
 
     @Email
