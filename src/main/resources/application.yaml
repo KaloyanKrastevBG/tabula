@@ -16,8 +16,8 @@ spring:
       client:
         registration:
           facebook:
-            client-id: 591853838367232
-            client-secret: ee894218ef0e187c6713f3e24e1d50f6
+            client-id: <>
+            client-secret: <>
   thymeleaf:
     cache: false
   mvc:

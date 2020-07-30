@@ -47,5 +47,10 @@ public class AnnouncementService {
 
     }
 
+    public void delete(Long announcementId){
+        announcementRepository.deleteById(announcementId);
+
+    }
+
     
 }
