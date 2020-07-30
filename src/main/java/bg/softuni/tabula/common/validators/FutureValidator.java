@@ -1,4 +1,4 @@
-package bg.softuni.tabula.event.model;
+package bg.softuni.tabula.common.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

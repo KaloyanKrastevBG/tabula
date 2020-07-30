@@ -1,4 +1,4 @@
-package bg.softuni.tabula.registration.model;
+package bg.softuni.tabula.common.validators;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
