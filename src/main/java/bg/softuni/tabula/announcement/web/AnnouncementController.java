@@ -46,9 +46,11 @@ public class AnnouncementController {
 
         if (bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("formData", announcementDTO);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.formData",
+            redirectAttributes.addFlashAttribute( BindingResult.MODEL_KEY_PREFIX + "formData",
                     bindingResult);
+
+//            "org.springframework.validation.BindingResult.formData"  == BindingResult.MODEL_KEY_PREFIX
+
             return "redirect:/announcements/new";
 
         }
