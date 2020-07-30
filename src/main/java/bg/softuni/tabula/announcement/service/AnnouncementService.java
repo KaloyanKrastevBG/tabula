@@ -1,6 +1,7 @@
 package bg.softuni.tabula.announcement.service;
 
 import bg.softuni.tabula.announcement.model.AnnouncementDTO;
+import bg.softuni.tabula.announcement.model.AnnouncementEntity;
 import bg.softuni.tabula.announcement.model.AnnouncementMapper;
 import bg.softuni.tabula.announcement.repository.AnnouncementRepository;
 import lombok.AllArgsConstructor;
@@ -29,6 +30,21 @@ public class AnnouncementService {
     public void cleanupOldAnnouncements(){
         Instant endTime = Instant.now().minus(7, ChronoUnit.DAYS);
         announcementRepository.deleteByUpdatedOnBefore(endTime);
+    }
+
+    public void createOrUpdateAnnouncement(AnnouncementDTO announcementDTO){
+        AnnouncementEntity announcementEntity =
+                AnnouncementMapper.INSTANCE.mapAnnouncementDtotoEntity(announcementDTO);
+
+        if (announcementEntity.getCreatedOn() == null){
+            announcementEntity.setCreatedOn(Instant.now());
+
+        }
+        announcementEntity.setUpdatedOn(Instant.now());
+
+
+        announcementRepository.save(announcementEntity);
+
     }
 
     
