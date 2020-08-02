@@ -1,4 +1,4 @@
-package bg.softuni.tabula.stats;
+package bg.softuni.tabula.integration.stats;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
