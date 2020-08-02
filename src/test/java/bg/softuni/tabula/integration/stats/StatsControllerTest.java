@@ -19,22 +19,14 @@ public class StatsControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-//    @Test
-//    @WithMockUser(username = "admin", roles={"USER", "ADMIN"})
-//    public void testStatsAccess() throws Exception {
-//        //todo - check the model attrib
-//        mockMvc.perform(get("/stats")).
-//                andExpect(status().isOk()).
-//                andExpect(view().name("stats/stats")).
-//                andExpect(model().attributeExists("requestCount", "startedOn"));
-//    }
-
     @Test
     @WithMockUser(username = "pesho", roles={"USER", "ADMIN"})
-    public void testStatsAccessDeniedForNormalUser() throws Exception {
+    public void testStatsAccess() throws Exception {
         mockMvc.perform(get("/stats")).
                 andExpect(status().isOk()).
                 andExpect(view().name("stats/stats")).
                 andExpect(model().attributeExists("requestCount", "startedOn"));
     }
+
+
 }
