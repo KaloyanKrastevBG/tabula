@@ -20,7 +20,7 @@ public class StatsControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    @WithMockUser(username = "pesho", roles={"USER", "ADMIN"})
+    @WithMockUser(username = "admin", roles={"USER", "ADMIN"})
     public void testStatsAccess() throws Exception {
         mockMvc.perform(get("/stats")).
                 andExpect(status().isOk()).
@@ -28,5 +28,10 @@ public class StatsControllerTest {
                 andExpect(model().attributeExists("requestCount", "startedOn"));
     }
 
-
+    @Test
+    @WithMockUser(username="pesho", roles = {"USER"})
+    public void testAccessDeniedForNormalUser() throws Exception {
+        mockMvc.perform(get("/stats")).
+                andExpect(status().isForbidden());
+    }
 }

@@ -59,7 +59,7 @@ dependencies {
 	compileOnly "org.webjars:popper.js:${popperJsVersion}"
 	compileOnly "org.webjars:bootstrap:${bootstrapVersion}"
 
-	compileOnly "org.mapstruct:mapstruct"
+	implementation "org.mapstruct:mapstruct"
 	compileOnly "org.projectlombok:lombok"
 	annotationProcessor "org.mapstruct:mapstruct-processor"
 	annotationProcessor "org.projectlombok:lombok"
